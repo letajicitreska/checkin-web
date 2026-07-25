@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=5">
 <script>
 if (window.location.hash && /confirmation_token|recovery_token|invite_token|access_token/.test(window.location.hash)) {
   window.location.replace("/admin/" + window.location.hash);
@@ -37,7 +37,7 @@ if (window.location.hash && /confirmation_token|recovery_token|invite_token|acce
 
 <section class="block">
   <div class="container">
-    <div class="prose">
+    <div class="prose justify">
       <div data-field="join_intro" data-html><p>Načítám…</p></div>
 
       <h2 data-field="join_prokoho_heading">Pro koho je check.in?</h2>
@@ -73,7 +73,7 @@ if (window.location.hash && /confirmation_token|recovery_token|invite_token|acce
 
 <section class="block soft">
   <div class="container">
-    <div class="prose">
+    <div class="prose justify">
       <h2 style="margin-top:0;">Základní členství</h2>
       <p>Pro členy, kteří se chtějí pravidelně tanečně rozvíjet, účastnit se repríz stávajícího repertoáru a být součástí souboru bez zapojení do nové celovečerní tvorby.</p>
       <p><strong>Zahrnuje:</strong></p>
@@ -94,7 +94,7 @@ if (window.location.hash && /confirmation_token|recovery_token|invite_token|acce
 
 <section class="block">
   <div class="container">
-    <div class="prose">
+    <div class="prose justify">
       <h2 style="margin-top:0;">Tvůrčí členství</h2>
       <p>Tvůrčí linka je určena členům, kteří se chtějí aktivně podílet na vzniku nových projektů a být součástí širší tvůrčí činnosti souboru. Vedle všeho, co zahrnuje základní členství, nabízí navíc:</p>
       <ul>
@@ -119,7 +119,7 @@ if (window.location.hash && /confirmation_token|recovery_token|invite_token|acce
 
 <section class="block soft">
   <div class="container">
-    <div class="prose">
+    <div class="prose justify">
       <h2 style="margin-top:0;">Školné</h2>
       <p><strong>Základní členství:</strong> 5 800 Kč / pololetí (zahrnuje pravidelné tréninky)<br>
       <strong>Tvůrčí členství:</strong> 5 800 Kč / pololetí (zahrnuje pravidelné tréninky a měsíční ateliéry)</p>
@@ -131,11 +131,11 @@ if (window.location.hash && /confirmation_token|recovery_token|invite_token|acce
 <footer class="site-footer">
   <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%;">
     <span>© <span id="year"></span> check.in</span>
-    <span>Postaveno na GitHub + Netlify</span>
+    <span>Foto: Irina Matusevič</span>
   </div>
 </footer>
 
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-<script src="/assets/main.js?v=3"></script>
+<script src="/assets/main.js?v=4"></script>
 </body>
 </html>

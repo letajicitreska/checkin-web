@@ -328,19 +328,13 @@ section.block.soft {
 
 /* ---------- gallery ---------- */
 .gallery-grid {
-  display: flex;
-  gap: 6px;
-  align-items: flex-start;
-}
-.gallery-col {
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-width: 0;
+  column-count: 3;
+  column-gap: 6px;
 }
 .gallery-grid a {
   display: block;
+  margin-bottom: 6px;
+  break-inside: avoid;
   overflow: hidden;
 }
 .gallery-grid img {
@@ -350,6 +344,10 @@ section.block.soft {
   transition: transform 0.4s ease;
 }
 .gallery-grid a:hover img { transform: scale(1.03); }
+
+@media (max-width: 700px) {
+  .gallery-grid { column-count: 2; }
+}
 
 .placeholder-photo {
   width: 100%;
