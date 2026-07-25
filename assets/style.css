@@ -199,6 +199,15 @@ nav.primary-nav a[aria-current="page"]::after {
   color: rgba(255,255,255,0.9);
   margin: 0;
 }
+.lede-strong {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #ffffff;
+}
+.lede-rest {
+  font-weight: 400;
+  color: rgba(255,255,255,0.72);
+}
 
 /* ---------- page banner (subpages) ---------- */
 .page-banner {
@@ -389,7 +398,7 @@ section.block.soft {
   width: 100%;
   height: 340px;
   background-size: cover;
-  background-position: center;
+  background-position: center 75%;
   background-color: var(--bg-soft);
   margin: 28px 0;
 }

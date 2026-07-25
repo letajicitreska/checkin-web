@@ -154,6 +154,17 @@ function waitForImages() {
   }));
 }
 
+function formatHeroLede() {
+  const el = qs(".hero p.lede");
+  if (!el) return;
+  const text = el.textContent.trim();
+  const idx = text.indexOf(". ");
+  if (idx === -1) return;
+  const first = text.slice(0, idx + 1);
+  const rest = text.slice(idx + 1).trim();
+  el.innerHTML = `<span class="lede-strong">${first}</span> <span class="lede-rest">${rest}</span>`;
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   initNavToggle();
   initHeaderScroll();
@@ -164,6 +175,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       loadJSON("/content/gallery.json").catch(() => ({ items: [] })),
     ]);
     fillText(document, site);
+    formatHeroLede();
     initHeroFallback(site);
     renderNews(document, workshops);
     await renderGallery(document, gallery);
