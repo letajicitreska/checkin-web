@@ -145,7 +145,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       loadJSON("/content/gallery.json").catch(() => ({ items: [] })),
     ]);
     fillText(document, site);
-    formatHeroLede();
     initHeroFallback(site);
     renderNews(document, workshops);
     renderGallery(document, gallery);

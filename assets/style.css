@@ -159,7 +159,7 @@ nav.primary-nav a[aria-current="page"]::after {
   position: relative;
   aspect-ratio: 16 / 9;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   overflow: hidden;
   color: #ffffff;
