@@ -1,0 +1,49 @@
+{
+  "hero_video": "/assets/uploads/check_in_3.mp4",
+  "hero_poster": "/assets/uploads/hero-poster.jpg",
+  "hero_heading": "Vítejte!",
+  "hero_text": "Check.in je brněnský soubor současného tance, jehož název je inspirovaný prvním společným momentem zakládajících členek souboru a zároveň jejich prvním stejnojmenným představením. Soubor založila koncem roku 2025 Aneta Holíková po několikaleté zkušenosti v lektorování a tvorbě choreografií. Její vizí je vybudovat v Brně místo pro tanečníky a tanečnice, kteří tíhnou k divadelnímu prostoru a chtějí se rozvíjet nejen jako tanečníci a tanečnice, ale i jako performeři a performerky.",
+  "hero_cta_label": "O nás",
+  "hero_cta_link": "/o-nas.html",
+
+  "news_heading": "Nenechte si ujít!",
+
+  "gallery_heading": "Momenty z naší premiéry",
+  "gallery_cta_label": "Fotogalerie",
+  "gallery_cta_link": "/repertoar.html",
+
+  "o_nas_heading": "O nás",
+  "o_nas_intro": "Taneční soubor check.in vznikl z potřeby vytvořit v Brně místo pro tanečníky a tanečnice, kteří chtějí být součástí delšího tvůrčího procesu a podílet se na vzniku autorských performativních projektů. Zasazuje současný tanec do divadelního prostoru a nabízí takový druh taneční tvorby, která dává čas hledání, objevování i společnému vývoji.\n\nVedle pohybové kvality je pro nás důležitá také přítomnost na jevišti, práce se záměry a schopnost komunikovat na jevišti jednak mezi sebou, jednak s diváctvem. Snažíme se proto vytvářet prostředí, ve kterém se mohou rozvíjet obě tyto roviny – tanečně-technická a performativní.",
+  "o_nas_image_1": "",
+
+  "o_nas_h2_vznik": "Jak check.in vznikl?",
+  "o_nas_text_vznik": "Myšlenka založit check.in vznikala u Anety Holíkové postupně během několikaleté práce s tanečníky a tanečnicemi, a to především v soutěžním prostoru. Vedle práce na kratších tanečních výstupech se začala objevovat potřeba věnovat více času samotnému procesu tvorby, práci s tématem a hledání vlastní jevištní přítomnosti. Check.in tak vznikl jako prostor umožňující delší tvůrčí proces a vznik performativních projektů, které umožňují rozvíjet nejen pohybové dovednosti, ale i performerství jako takové.",
+
+  "o_nas_h2_prokoho": "Pro koho je check.in?",
+  "o_nas_text_prokoho": "Taneční soubor check.in je určený pokročilým tanečníkům a tanečnicím, kteří chtějí rozvíjet nejen svou pohybovou stránku, ale i práci s jevištní přítomností. Hledáme lidi, které zajímá tvorba, společný proces a divadelní prostor stejně jako samotný tanec.",
+  "o_nas_image_2": "",
+
+  "o_nas_h2_spolupraca": "Jak (spolu)pracujeme?",
+  "o_nas_text_spolupraca": "Vycházíme z přesvědčení, že každý performer či performerka přináší do tvorby vlastní zkušenost, osobnost a způsob vyjádření. Nesnažíme se proto vytvářet jednotný pohybový projev, ale hledat a rozvíjet potenciál jednotlivých členů souboru a jejich místo v celku.\n\nDůležitou součástí naší práce je otevřená komunikace, vzájemný respekt a bezpečné prostředí pro tvorbu. Tvůrčí proces vnímáme jako společnou práci, během které mají všichni možnost aktivně ovlivňovat podobu vznikajícího díla. Stejně důležitý jako výsledná performance je pro nás i samotný proces jejího vzniku – čas věnovaný hledání, zkoušení, sdílení a společnému objevování.",
+
+  "o_nas_h2_proc": "Proč zrovna check.in?",
+  "o_nas_text_proc": "Název souboru je inspirovaný prvním společným momentem zakládajících členek souboru a zároveň jejich prvním stejnojmenným představením. Slovo check-in přitom představuje pojem užívaný v souvislosti s různými workshopy či skupinovými aktivitami. Označuje krátký úvodní moment společného setkání, kdy se skupina jednotlivců zastaví a každý z nich sdílí, s čím do společného prostoru přichází – s jakými pocity, očekáváními či předchozími zkušenostmi. Jde taktéž o chvíli obrácení pozornosti k tomu, jak se právě cítíme a co prožíváme. Dovednost check-inu může být užitečná nejen pro skupinu, ale i pro jednotlivce, například v náročných či konfliktních situacích. Tento jednoduchý rituál pomáhá naladit účastníky na přítomný okamžik i na procesy, které ve skupině teprve přicházejí. Vytváří tak prostor pro vzájemné vnímání, sdílení i postupné utváření vztahů. Jednotlivci tímto okamžikem vstupují do společného prostoru.",
+
+  "o_nas_banner_image": "",
+  "repertoar_banner_image": "",
+  "pridejte_banner_image": "",
+  "spolupracujte_banner_image": "",
+
+  "join_heading": "Přidejte se k nám",
+  "join_text": "",
+  "join_cta_label": "Napsat nám",
+  "join_cta_link": "mailto:info@checkincompany.cz",
+
+  "collab_heading": "Spolupracujte s námi",
+  "collab_text": "",
+
+  "contact_name": "check.in",
+  "contact_address": "Sportovní 2A, 602 00 Brno-Královo Pole",
+  "contact_email": "info@checkincompany.cz",
+  "contact_phone": ""
+}
