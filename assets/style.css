@@ -1,0 +1,372 @@
+/* =========================================================
+   check.in — design tokens
+   Light, editorial recreation of the original webnode site:
+   white background, black text, DM Sans (Open Sans fallback),
+   full-bleed header images per page, photo cards for news/gallery.
+   ========================================================= */
+
+:root {
+  --ink: #111111;
+  --muted: #5c5a55;
+  --bg: #ffffff;
+  --bg-soft: #f5f4f1;
+  --line: #e6e3dd;
+  --accent: #111111;
+
+  --heading: "DM Sans", "Open Sans", system-ui, sans-serif;
+  --body: "DM Sans", "Open Sans", system-ui, sans-serif;
+
+  --edge: 1px solid var(--line);
+  --container: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------- eyebrow label ---------- */
+.eyebrow {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- header / nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: var(--edge);
+}
+.site-header.on-hero {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+.site-header.on-hero .logo,
+.site-header.on-hero nav.primary-nav a { color: #ffffff; }
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+}
+.logo {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+nav.primary-nav {
+  display: flex;
+  gap: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+nav.primary-nav a {
+  position: relative;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 6px 0;
+}
+nav.primary-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%;
+  bottom: 0;
+  height: 2px;
+  background: currentColor;
+  transition: right 0.2s ease;
+}
+nav.primary-nav a:hover::after,
+nav.primary-nav a[aria-current="page"]::after {
+  right: 0;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid currentColor;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  nav.primary-nav {
+    position: fixed;
+    inset: 76px 0 0 0;
+    background: var(--bg);
+    color: var(--ink);
+    flex-direction: column;
+    padding: 24px 28px;
+    gap: 20px;
+    font-size: 14px;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+  }
+  nav.primary-nav.open { transform: translateX(0); }
+  nav.primary-nav a { color: var(--ink) !important; }
+  .nav-toggle { display: block; }
+}
+
+/* ---------- hero with background video ---------- */
+.hero {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: #ffffff;
+  background: #1a1a1a;
+}
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+}
+.hero-content {
+  position: relative;
+  padding: 64px 0 72px;
+  width: 100%;
+}
+.hero h1 {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+  max-width: 18ch;
+  text-transform: uppercase;
+}
+.hero p.lede {
+  max-width: 56ch;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  margin: 0 0 28px;
+}
+
+/* ---------- page banner (subpages) ---------- */
+.page-banner {
+  position: relative;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg-soft);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 26px;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
+}
+.btn:hover { background: var(--ink); color: #fff; }
+.btn.primary { background: var(--ink); color: #fff; }
+.btn.primary:hover { background: transparent; color: var(--ink); }
+.hero .btn { border-color: #fff; color: #fff; }
+.hero .btn:hover { background: #fff; color: var(--ink); }
+
+/* ---------- section shell ---------- */
+section.block { padding: 80px 0; }
+section.block.tight { padding: 56px 0; }
+section.block.soft { background: var(--bg-soft); }
+.section-head {
+  margin-bottom: 40px;
+}
+.section-head h2 {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  margin: 6px 0 0;
+  text-transform: uppercase;
+}
+
+/* ---------- news / aktuality — photo cards ---------- */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+.news-card {
+  border: var(--edge);
+}
+.news-card .photo {
+  aspect-ratio: 3/4;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg-soft);
+}
+.news-card .body { padding: 20px 22px 26px; }
+.news-card .tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.news-card h3 {
+  font-family: var(--heading);
+  font-size: 1.3rem;
+  margin: 8px 0 14px;
+}
+.news-empty {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 20px 0;
+}
+
+/* ---------- gallery ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.gallery-grid a { aspect-ratio: 4/5; overflow: hidden; position: relative; }
+.gallery-grid img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery-grid a:hover img { transform: scale(1.04); }
+
+@media (max-width: 700px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.placeholder-photo {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-soft);
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px;
+}
+
+/* ---------- prose (o nás) ---------- */
+.prose {
+  max-width: 68ch;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.prose p { margin: 0 0 20px; }
+.prose strong { font-weight: 700; }
+.prose h1 {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 28px;
+  text-transform: uppercase;
+}
+.prose h2 {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 40px 0 14px;
+}
+
+/* ---------- contact ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+}
+@media (max-width: 780px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+.contact-card {
+  border: var(--edge);
+  padding: 28px;
+  font-size: 14px;
+  line-height: 2;
+}
+.contact-card a { text-decoration: underline; }
+
+/* ---------- footer ---------- */
+footer.site-footer {
+  border-top: var(--edge);
+  padding: 32px 0;
+  font-size: 12.5px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+footer.site-footer a { color: var(--muted); }
+
+/* ---------- cta banner (join us) ---------- */
+.cta-banner {
+  border: var(--edge);
+  padding: 48px;
+  text-align: center;
+  background: var(--bg-soft);
+}
+.cta-banner h2 { font-family: var(--heading); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 16px; text-transform: uppercase; }
+.cta-banner p { color: var(--muted); max-width: 52ch; margin: 0 auto 28px; }
+
+.fill-note {
+  font-size: 13px;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  padding: 14px 18px;
+  margin-top: 18px;
+}

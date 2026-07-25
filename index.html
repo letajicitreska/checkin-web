@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>check.in — soubor současného tance</title>
+<meta name="description" content="Check.in je brněnský soubor současného tance založený Anetou Holíkovou.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header on-hero">
+  <div class="container">
+    <a class="logo" href="/">check.in</a>
+    <button class="nav-toggle" aria-expanded="false">MENU</button>
+    <nav class="primary-nav">
+      <a href="/" aria-current="page">Domů</a>
+      <a href="/o-nas.html">O nás</a>
+      <a href="/repertoar.html">Repertoár</a>
+      <a href="/pridejte-se.html">Přidejte se k nám</a>
+      <a href="/spolupracujte.html">Spolupracujte s námi</a>
+      <a href="/#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <video class="hero-media" autoplay muted loop playsinline data-src="hero_video" poster=""></video>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <h1 data-field="hero_heading">Vítejte!</h1>
+    <p class="lede" data-field="hero_text">Načítám…</p>
+    <a class="btn" data-field="hero_cta_label" data-href="hero_cta_link" href="/o-nas.html">O nás</a>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-field="news_heading">Nenechte si ujít!</h2>
+    </div>
+    <div class="news-grid" data-news>
+      <p class="news-empty">Načítám termíny…</p>
+    </div>
+  </div>
+</section>
+
+<section class="block soft tight">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-field="gallery_heading">Momenty z naší premiéry</h2>
+    </div>
+    <div class="gallery-grid" data-gallery>
+      <div class="placeholder-photo">Načítám fotky…</div>
+    </div>
+    <div style="margin-top:28px;">
+      <a class="btn" data-field="gallery_cta_label" data-href="gallery_cta_link" href="/repertoar.html">Fotogalerie</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="kontakt">
+  <div class="container">
+    <div class="section-head">
+      <h2>Kontaktujte nás</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div data-field="contact_name">check.in</div>
+        <div data-field="contact_address">Sportovní 2A, 602 00 Brno-Královo Pole</div>
+        <div><a href="mailto:info@checkincompany.cz" data-field="contact_email">info@checkincompany.cz</a></div>
+      </div>
+      <div class="cta-banner">
+        <h2 data-field="join_heading">Přidejte se k nám</h2>
+        <a class="btn primary" data-field="join_cta_label" data-href="join_cta_link" href="mailto:info@checkincompany.cz">Napsat nám</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%;">
+    <span>© <span id="year"></span> check.in</span>
+    <span>Postaveno na GitHub + Netlify</span>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="/assets/main.js"></script>
+</body>
+</html>

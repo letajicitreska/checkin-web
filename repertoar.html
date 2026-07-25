@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repertoár — check.in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="/">check.in</a>
+    <button class="nav-toggle" aria-expanded="false">MENU</button>
+    <nav class="primary-nav">
+      <a href="/">Domů</a>
+      <a href="/o-nas.html">O nás</a>
+      <a href="/repertoar.html" aria-current="page">Repertoár</a>
+      <a href="/pridejte-se.html">Přidejte se k nám</a>
+      <a href="/spolupracujte.html">Spolupracujte s námi</a>
+      <a href="/#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-banner" data-bg="repertoar_banner_image"></div>
+
+<section class="block tight">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Repertoár</span>
+      <h2>Momenty z naší premiéry</h2>
+    </div>
+    <div class="gallery-grid" data-gallery>
+      <div class="placeholder-photo">Načítám fotky…</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%;">
+    <span>© <span id="year"></span> check.in</span>
+    <span>Postaveno na GitHub + Netlify</span>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="/assets/main.js"></script>
+</body>
+</html>

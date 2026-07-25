@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O nás — check.in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="/">check.in</a>
+    <button class="nav-toggle" aria-expanded="false">MENU</button>
+    <nav class="primary-nav">
+      <a href="/">Domů</a>
+      <a href="/o-nas.html" aria-current="page">O nás</a>
+      <a href="/repertoar.html">Repertoár</a>
+      <a href="/pridejte-se.html">Přidejte se k nám</a>
+      <a href="/spolupracujte.html">Spolupracujte s námi</a>
+      <a href="/#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-banner" data-bg="o_nas_banner_image"></div>
+
+<section class="block">
+  <div class="container">
+    <div class="prose">
+      <h1 data-field="o_nas_heading">O nás</h1>
+      <div data-field="o_nas_intro" data-html><p>Načítám…</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="page-banner" style="height:260px;" data-bg="o_nas_image_1"></div>
+</div>
+
+<section class="block tight">
+  <div class="container">
+    <div class="prose">
+      <h2 data-field="o_nas_h2_vznik">Jak check.in vznikl?</h2>
+      <div data-field="o_nas_text_vznik" data-html><p>Načítám…</p></div>
+
+      <h2 data-field="o_nas_h2_prokoho">Pro koho je check.in?</h2>
+      <div data-field="o_nas_text_prokoho" data-html><p>Načítám…</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="page-banner" style="height:260px;" data-bg="o_nas_image_2"></div>
+</div>
+
+<section class="block tight">
+  <div class="container">
+    <div class="prose">
+      <h2 data-field="o_nas_h2_spolupraca">Jak (spolu)pracujeme?</h2>
+      <div data-field="o_nas_text_spolupraca" data-html><p>Načítám…</p></div>
+
+      <h2 data-field="o_nas_h2_proc">Proč zrovna check.in?</h2>
+      <div data-field="o_nas_text_proc" data-html><p>Načítám…</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%;">
+    <span>© <span id="year"></span> check.in</span>
+    <span>Postaveno na GitHub + Netlify</span>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="/assets/main.js"></script>
+</body>
+</html>

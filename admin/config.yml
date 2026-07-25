@@ -1,0 +1,101 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "cs"
+
+collections:
+  - name: "stranky"
+    label: "Texty na webu"
+    files:
+      - name: "uvod"
+        label: "Úvod (Domů) a video"
+        file: "content/site.json"
+        fields:
+          - { label: "Video na pozadí (nahraj mp4)", name: "hero_video", widget: "file", required: false, hint: "Krátké video ve smyčce, ideálně pod 15 MB." }
+          - { label: "Náhledová fotka (než se video načte)", name: "hero_poster", widget: "image", required: false }
+          - { label: "Nadpis (Vítejte!)", name: "hero_heading", widget: "string" }
+          - { label: "Úvodní text", name: "hero_text", widget: "text" }
+          - { label: "Text tlačítka", name: "hero_cta_label", widget: "string" }
+          - { label: "Odkaz tlačítka", name: "hero_cta_link", widget: "string" }
+
+          - { label: "Nadpis sekce aktualit", name: "news_heading", widget: "string" }
+          - { label: "Nadpis fotogalerie na Domů", name: "gallery_heading", widget: "string" }
+          - { label: "Text tlačítka k fotogalerii", name: "gallery_cta_label", widget: "string" }
+          - { label: "Odkaz k fotogalerii", name: "gallery_cta_link", widget: "string" }
+
+          - { label: "Přidejte se — nadpis", name: "join_heading", widget: "string" }
+          - { label: "Přidejte se — text", name: "join_text", widget: "text", required: false }
+          - { label: "Přidejte se — text tlačítka", name: "join_cta_label", widget: "string" }
+          - { label: "Přidejte se — odkaz/e-mail", name: "join_cta_link", widget: "string" }
+
+          - { label: "Spolupráce — nadpis", name: "collab_heading", widget: "string" }
+          - { label: "Spolupráce — text", name: "collab_text", widget: "text", required: false }
+
+          - { label: "Kontakt — název", name: "contact_name", widget: "string" }
+          - { label: "Kontakt — adresa", name: "contact_address", widget: "string" }
+          - { label: "Kontakt — e-mail", name: "contact_email", widget: "string" }
+          - { label: "Kontakt — telefon", name: "contact_phone", widget: "string", required: false }
+
+      - name: "onas"
+        label: "Stránka O nás"
+        file: "content/site.json"
+        fields:
+          - { label: "Banner fotka nahoře na stránce", name: "o_nas_banner_image", widget: "image", required: false }
+          - { label: "Nadpis", name: "o_nas_heading", widget: "string" }
+          - { label: "Úvodní text (prázdný řádek = nový odstavec)", name: "o_nas_intro", widget: "text" }
+          - { label: "Fotka mezi odstavci #1", name: "o_nas_image_1", widget: "image", required: false }
+
+          - { label: "Nadpis: Jak check.in vznikl?", name: "o_nas_h2_vznik", widget: "string" }
+          - { label: "Text: Jak check.in vznikl?", name: "o_nas_text_vznik", widget: "text" }
+
+          - { label: "Nadpis: Pro koho je check.in?", name: "o_nas_h2_prokoho", widget: "string" }
+          - { label: "Text: Pro koho je check.in?", name: "o_nas_text_prokoho", widget: "text" }
+          - { label: "Fotka mezi odstavci #2", name: "o_nas_image_2", widget: "image", required: false }
+
+          - { label: "Nadpis: Jak (spolu)pracujeme?", name: "o_nas_h2_spolupraca", widget: "string" }
+          - { label: "Text: Jak (spolu)pracujeme?", name: "o_nas_text_spolupraca", widget: "text" }
+
+          - { label: "Nadpis: Proč zrovna check.in?", name: "o_nas_h2_proc", widget: "string" }
+          - { label: "Text: Proč zrovna check.in?", name: "o_nas_text_proc", widget: "text" }
+
+      - name: "ostatni_bannery"
+        label: "Banner fotky ostatních stránek"
+        file: "content/site.json"
+        fields:
+          - { label: "Banner — Repertoár", name: "repertoar_banner_image", widget: "image", required: false }
+          - { label: "Banner — Přidejte se k nám", name: "pridejte_banner_image", widget: "image", required: false }
+          - { label: "Banner — Spolupracujte s námi", name: "spolupracujte_banner_image", widget: "image", required: false }
+
+  - name: "terminy"
+    label: "Aktuální termíny / workshopy"
+    files:
+      - name: "seznam"
+        label: "Seznam termínů (karty na Domů)"
+        file: "content/workshops.json"
+        fields:
+          - label: "Termíny"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Fotka", name: "image", widget: "image", required: false }
+              - { label: "Malý štítek nad nadpisem (např. Repríza: Check-in)", name: "tag", widget: "string", required: false }
+              - { label: "Název akce", name: "title", widget: "string" }
+              - { label: "Odkaz (přihláška apod.)", name: "link", widget: "string", required: false }
+
+  - name: "galerie"
+    label: "Fotogalerie"
+    files:
+      - name: "fotky"
+        label: "Fotky"
+        file: "content/gallery.json"
+        fields:
+          - label: "Fotky"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Fotka", name: "image", widget: "image", required: false }
+              - { label: "Popisek", name: "caption", widget: "string", required: false }

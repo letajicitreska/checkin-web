@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Přidejte se k nám — check.in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="/">check.in</a>
+    <button class="nav-toggle" aria-expanded="false">MENU</button>
+    <nav class="primary-nav">
+      <a href="/">Domů</a>
+      <a href="/o-nas.html">O nás</a>
+      <a href="/repertoar.html">Repertoár</a>
+      <a href="/pridejte-se.html" aria-current="page">Přidejte se k nám</a>
+      <a href="/spolupracujte.html">Spolupracujte s námi</a>
+      <a href="/#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-banner" data-bg="pridejte_banner_image"></div>
+
+<section class="block">
+  <div class="container">
+    <div class="prose">
+      <h1 data-field="join_heading">Přidejte se k nám</h1>
+      <p data-field="join_text"></p>
+      <p class="fill-note">Tady zatím chybí skutečný text — doplň ho v adminu v sekci "Texty na webu".</p>
+      <a class="btn primary" data-field="join_cta_label" data-href="join_cta_link" href="mailto:info@checkincompany.cz">Napsat nám</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%;">
+    <span>© <span id="year"></span> check.in</span>
+    <span>Postaveno na GitHub + Netlify</span>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="/assets/main.js"></script>
+</body>
+</html>
