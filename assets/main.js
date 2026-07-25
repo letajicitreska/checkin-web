@@ -47,24 +47,54 @@ function renderNews(root, workshops) {
         : `<div class="photo placeholder-photo">Fotka akce</div>`}
       <div class="body">
         ${w.tag ? `<div class="tag">${w.tag}</div>` : ""}
-        <h3>${w.link ? `<a href="${w.link}" target="_blank" rel="noopener">${w.title}</a>` : w.title}</h3>
+        <h3>${w.title}</h3>
         ${w.link ? `<a class="btn" href="${w.link}" target="_blank" rel="noopener">${w.title}</a>` : ""}
       </div>
     </div>
   `).join("");
 }
 
-function renderGallery(root, gallery) {
+function measureRatio(src) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve((img.naturalWidth && img.naturalHeight) ? img.naturalWidth / img.naturalHeight : 0.8);
+    img.onerror = () => resolve(0.8);
+    img.src = src;
+  });
+}
+
+async function renderGallery(root, gallery) {
   const grid = qs("[data-gallery]", root);
   if (!grid) return;
-  const items = (gallery.items || []).filter(Boolean);
-  grid.innerHTML = items.map((g) => `
-    <a href="${g.image || '#'}" target="_blank" rel="noopener" aria-label="${g.caption || ''}">
-      ${g.image
-        ? `<img src="${g.image}" alt="${g.caption || ''}" loading="lazy">`
-        : `<span class="placeholder-photo">Fotka<br>${g.caption || ''}</span>`}
-    </a>
-  `).join("");
+  const items = (gallery.items || []).filter((g) => g && g.image);
+  if (!items.length) {
+    grid.innerHTML = `<p class="news-empty">Zatím žádné fotky.</p>`;
+    return;
+  }
+  const colCount = window.innerWidth <= 700 ? 2 : 3;
+  const ratios = await Promise.all(items.map((it) => measureRatio(it.image)));
+  const cols = Array.from({ length: colCount }, () => ({ height: 0, el: document.createElement("div") }));
+  cols.forEach((c) => { c.el.className = "gallery-col"; });
+
+  items.forEach((it, i) => {
+    const ratio = ratios[i] || 0.8;
+    const shortest = cols.reduce((a, b) => (a.height <= b.height ? a : b));
+    const a = document.createElement("a");
+    a.href = it.image;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.setAttribute("aria-label", it.caption || "");
+    const img = document.createElement("img");
+    img.src = it.image;
+    img.alt = it.caption || "";
+    img.loading = "lazy";
+    a.appendChild(img);
+    shortest.el.appendChild(a);
+    shortest.height += 1 / ratio;
+  });
+
+  grid.innerHTML = "";
+  cols.forEach((c) => grid.appendChild(c.el));
 }
 
 function initNavToggle() {
@@ -104,6 +134,26 @@ function initHeaderScroll() {
   window.addEventListener("scroll", update, { passive: true });
 }
 
+function reapplyHashScroll() {
+  if (!window.location.hash) return;
+  const target = document.querySelector(window.location.hash);
+  if (!target) return;
+  target.scrollIntoView({ behavior: "auto", block: "start" });
+}
+
+window.addEventListener("load", reapplyHashScroll);
+
+function waitForImages() {
+  const imgs = qsa("img");
+  return Promise.all(imgs.map((img) => {
+    if (img.complete) return Promise.resolve();
+    return new Promise((resolve) => {
+      img.addEventListener("load", resolve, { once: true });
+      img.addEventListener("error", resolve, { once: true });
+    });
+  }));
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   initNavToggle();
   initHeaderScroll();
@@ -116,7 +166,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     fillText(document, site);
     initHeroFallback(site);
     renderNews(document, workshops);
-    renderGallery(document, gallery);
+    await renderGallery(document, gallery);
+    await waitForImages();
+    reapplyHashScroll();
   } catch (err) {
     console.error(err);
   }
