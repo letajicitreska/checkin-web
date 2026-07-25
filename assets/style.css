@@ -194,7 +194,7 @@ nav.primary-nav a[aria-current="page"]::after {
   gap: 26px;
 }
 .hero p.lede {
-  max-width: 56ch;
+  max-width: 80ch;
   font-size: 1.1rem;
   color: rgba(255,255,255,0.9);
   margin: 0;
