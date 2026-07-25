@@ -180,7 +180,8 @@ nav.primary-nav a[aria-current="page"]::after {
 }
 .hero-content {
   position: relative;
-  padding: 64px 0 72px;
+  padding-top: 64px;
+  padding-bottom: 72px;
   width: 100%;
 }
 .hero h1 {
@@ -233,8 +234,12 @@ nav.primary-nav a[aria-current="page"]::after {
 
 /* ---------- section shell ---------- */
 section.block { padding: 80px 0; }
-section.block.tight { padding: 56px 0; }
-section.block.soft { background: var(--bg-soft); }
+section.block.tight { padding: 72px 0; }
+section.block.soft {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
 .section-head {
   margin-bottom: 40px;
 }
@@ -249,8 +254,8 @@ section.block.soft { background: var(--bg-soft); }
 /* ---------- news / aktuality — photo cards ---------- */
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 300px));
+  gap: 24px;
 }
 .news-card {
   border: var(--edge);
@@ -261,18 +266,20 @@ section.block.soft { background: var(--bg-soft); }
   background-position: center;
   background-color: var(--bg-soft);
 }
-.news-card .body { padding: 20px 22px 26px; }
+.news-card .body { padding: 22px 24px 28px; }
 .news-card .tag {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
+  display: block;
+  margin-bottom: 10px;
 }
 .news-card h3 {
   font-family: var(--heading);
   font-size: 1.3rem;
-  margin: 8px 0 14px;
+  margin: 0 0 18px;
 }
 .news-empty {
   font-size: 14px;
@@ -352,12 +359,23 @@ section.block.soft { background: var(--bg-soft); }
 .contact-card {
   border: var(--edge);
   padding: 28px;
-  font-size: 14px;
-  line-height: 2;
+  font-size: 16px;
+  line-height: 1.6;
 }
 .contact-card a { text-decoration: underline; }
+.contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.contact-row + .contact-row { margin-top: 20px; }
+.contact-row svg { flex: none; width: 22px; height: 22px; margin-top: 2px; color: var(--muted); }
+.contact-row .label { font-weight: 700; font-size: 1.05rem; }
+.contact-row .sub { color: var(--muted); font-size: 14.5px; margin-top: 2px; }
 
-/* ---------- footer ---------- */
+#kontakt {
+  scroll-margin-top: 92px;
+}
 footer.site-footer {
   border-top: var(--edge);
   padding: 32px 0;
