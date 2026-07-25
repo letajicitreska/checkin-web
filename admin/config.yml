@@ -27,9 +27,6 @@ collections:
           - { label: "Text tlačítka k fotogalerii", name: "gallery_cta_label", widget: "string" }
           - { label: "Odkaz k fotogalerii", name: "gallery_cta_link", widget: "string" }
 
-          - { label: "Spolupráce — nadpis", name: "collab_heading", widget: "string" }
-          - { label: "Spolupráce — text", name: "collab_text", widget: "text", required: false }
-
           - { label: "Kontakt — název", name: "contact_name", widget: "string" }
           - { label: "Kontakt — adresa", name: "contact_address", widget: "string" }
           - { label: "Kontakt — e-mail", name: "contact_email", widget: "string" }
@@ -37,7 +34,7 @@ collections:
 
       - name: "onas"
         label: "Stránka O nás"
-        file: "content/site.json"
+        file: "content/o-nas.json"
         fields:
           - { label: "Banner fotka nahoře na stránce", name: "o_nas_banner_image", widget: "image", required: false }
           - { label: "Nadpis", name: "o_nas_heading", widget: "string" }
@@ -59,7 +56,7 @@ collections:
 
       - name: "repertoar"
         label: "Stránka Repertoár"
-        file: "content/site.json"
+        file: "content/repertoar.json"
         fields:
           - { label: "Banner fotka nahoře", name: "repertoar_banner_image", widget: "image", required: false }
           - { label: "Název představení", name: "repertoar_heading", widget: "string" }
@@ -68,22 +65,23 @@ collections:
 
       - name: "pridejtese"
         label: "Stránka Přidejte se k nám (úvod)"
-        file: "content/site.json"
+        file: "content/pridejte.json"
         fields:
           - { label: "Banner fotka nahoře", name: "pridejte_banner_image", widget: "image", required: false }
           - { label: "Nadpis", name: "join_heading", widget: "string" }
           - { label: "Úvodní text (může obsahovat HTML odkazy)", name: "join_intro", widget: "text" }
           - { label: "Nadpis: Pro koho je check.in?", name: "join_prokoho_heading", widget: "string" }
           - { label: "Text: Pro koho je check.in?", name: "join_prokoho_text", widget: "text" }
-          - { label: "Text tlačítka Napsat nám", name: "join_cta_label", widget: "string" }
+          - { label: "Text tlačítka Napište nám", name: "join_cta_label", widget: "string" }
           - { label: "Odkaz/e-mail tlačítka", name: "join_cta_link", widget: "string" }
 
-
-      - name: "ostatni_bannery"
-        label: "Banner fotka — Spolupracujte s námi"
-        file: "content/site.json"
+      - name: "spolupracujte"
+        label: "Stránka Spolupracujte s námi"
+        file: "content/spolupracujte.json"
         fields:
-          - { label: "Banner — Spolupracujte s námi", name: "spolupracujte_banner_image", widget: "image", required: false }
+          - { label: "Banner fotka nahoře", name: "spolupracujte_banner_image", widget: "image", required: false }
+          - { label: "Nadpis", name: "collab_heading", widget: "string" }
+          - { label: "Text", name: "collab_text", widget: "text", required: false }
 
   - name: "terminy"
     label: "Aktuální termíny / workshopy"
@@ -102,11 +100,25 @@ collections:
               - { label: "Odkaz (přihláška apod.)", name: "link", widget: "string", required: false }
 
   - name: "galerie"
-    label: "Fotogalerie"
+    label: "Fotogalerie — Domů"
     files:
       - name: "fotky"
         label: "Fotky"
         file: "content/gallery.json"
+        fields:
+          - label: "Fotky"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Fotka", name: "image", widget: "image", required: false }
+              - { label: "Popisek", name: "caption", widget: "string", required: false }
+
+  - name: "galerie_repertoar"
+    label: "Fotogalerie — Repertoár"
+    files:
+      - name: "fotky"
+        label: "Fotky"
+        file: "content/repertoar-gallery.json"
         fields:
           - label: "Fotky"
             name: "items"

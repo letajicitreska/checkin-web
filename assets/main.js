@@ -54,17 +54,26 @@ function renderNews(root, workshops) {
   `).join("");
 }
 
-function renderGallery(root, gallery) {
-  const grid = qs("[data-gallery]", root);
-  if (!grid) return;
-  const items = (gallery.items || []).filter(Boolean);
-  grid.innerHTML = items.map((g) => `
-    <a href="${g.image || '#'}" target="_blank" rel="noopener" aria-label="${g.caption || ''}">
-      ${g.image
-        ? `<img src="${g.image}" alt="${g.caption || ''}" loading="lazy">`
-        : `<span class="placeholder-photo">Fotka<br>${g.caption || ''}</span>`}
-    </a>
-  `).join("");
+async function renderGallery(root) {
+  const grids = qsa("[data-gallery]", root);
+  for (const grid of grids) {
+    const which = grid.getAttribute("data-gallery");
+    const path = which === "repertoar" ? "/content/repertoar-gallery.json" : "/content/gallery.json";
+    let gallery;
+    try {
+      gallery = await loadJSON(path);
+    } catch (e) {
+      gallery = { items: [] };
+    }
+    const items = (gallery.items || []).filter(Boolean);
+    grid.innerHTML = items.map((g) => `
+      <a href="${g.image || '#'}" target="_blank" rel="noopener" aria-label="${g.caption || ''}">
+        ${g.image
+          ? `<img src="${g.image}" alt="${g.caption || ''}" loading="lazy">`
+          : `<span class="placeholder-photo">Fotka<br>${g.caption || ''}</span>`}
+      </a>
+    `).join("");
+  }
 }
 
 function initNavToggle() {
@@ -139,15 +148,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   initNavToggle();
   initHeaderScroll();
   try {
-    const [site, workshops, gallery] = await Promise.all([
-      loadJSON("/content/site.json"),
+    const [siteA, siteB, siteC, siteD, siteE, workshops] = await Promise.all([
+      loadJSON("/content/site.json").catch(() => ({})),
+      loadJSON("/content/o-nas.json").catch(() => ({})),
+      loadJSON("/content/repertoar.json").catch(() => ({})),
+      loadJSON("/content/pridejte.json").catch(() => ({})),
+      loadJSON("/content/spolupracujte.json").catch(() => ({})),
       loadJSON("/content/workshops.json").catch(() => ({ items: [] })),
-      loadJSON("/content/gallery.json").catch(() => ({ items: [] })),
     ]);
+    const site = Object.assign({}, siteA, siteB, siteC, siteD, siteE);
     fillText(document, site);
     initHeroFallback(site);
     renderNews(document, workshops);
-    renderGallery(document, gallery);
+    await renderGallery(document);
     await waitForImages();
     reapplyHashScroll();
   } catch (err) {

@@ -1,10 +1,16 @@
 {
   "items": [
     {
-      "image": "",
+      "image": "/assets/uploads/workshops/summer-dance-intensive.jpg",
       "tag": "Repríza: Check-in",
       "title": "Summer Dance Intensive",
       "link": "https://forms.gle/5xjFY6r8MfTivk4c9"
+    },
+    {
+      "image": "/assets/uploads/workshops/repriza-check-in-2026.jpg",
+      "tag": "Repríza: Check-in",
+      "title": "19. října 2026, Kulturní centrum Co.Labs",
+      "link": ""
     }
   ]
 }
