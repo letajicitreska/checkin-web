@@ -30,6 +30,7 @@ collections:
           - { label: "Kontakt — název", name: "contact_name", widget: "string" }
           - { label: "Kontakt — adresa", name: "contact_address", widget: "string" }
           - { label: "Kontakt — e-mail", name: "contact_email", widget: "string" }
+          - { label: "Kontakt — Instagram (text, např. @check.in.company)", name: "contact_instagram", widget: "string", required: false }
           - { label: "Kontakt — telefon", name: "contact_phone", widget: "string", required: false }
 
       - name: "onas"
