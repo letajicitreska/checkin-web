@@ -1,10 +1,11 @@
 {
   "items": [
-    { "image": "", "caption": "Premiéra Check-in, 2026" },
-    { "image": "", "caption": "Premiéra Check-in, 2026" },
-    { "image": "", "caption": "Premiéra Check-in, 2026" },
-    { "image": "", "caption": "Premiéra Check-in, 2026" },
-    { "image": "", "caption": "Premiéra Check-in, 2026" },
-    { "image": "", "caption": "Premiéra Check-in, 2026" }
+    { "image": "/assets/uploads/gallery/CHECK-IN_premiere_2500px_18.jpg", "caption": "Premiéra Check-in, 2026" },
+    { "image": "/assets/uploads/gallery/CHECK-IN_premiere_2500px_43.jpg", "caption": "Premiéra Check-in, 2026" },
+    { "image": "/assets/uploads/gallery/CHECK-IN_premiere_2500px_62.jpg", "caption": "Premiéra Check-in, 2026" },
+    { "image": "/assets/uploads/gallery/CHECK-IN_premiere_2500px_4.jpg", "caption": "Premiéra Check-in, 2026" },
+    { "image": "/assets/uploads/gallery/CHECK-IN_premiere_2500px_25.jpg", "caption": "Premiéra Check-in, 2026" },
+    { "image": "/assets/uploads/gallery/CHECK-IN_premiere_2500px_15.jpg", "caption": "Premiéra Check-in, 2026" },
+    { "image": "/assets/uploads/gallery/CHECK-IN_premiere_2500px_44.jpg", "caption": "Premiéra Check-in, 2026" }
   ]
 }
