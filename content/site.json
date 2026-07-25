@@ -1,6 +1,6 @@
 {
-  "hero_video": "",
-  "hero_poster": "",
+  "hero_video": "/assets/uploads/check_in_3.mp4",
+  "hero_poster": "/assets/uploads/hero-poster.jpg",
   "hero_heading": "Vítejte!",
   "hero_text": "Check.in je brněnský soubor současného tance, jehož název je inspirovaný prvním společným momentem zakládajících členek souboru a zároveň jejich prvním stejnojmenným představením. Soubor založila koncem roku 2025 Aneta Holíková po několikaleté zkušenosti v lektorování a tvorbě choreografií. Její vizí je vybudovat v Brně místo pro tanečníky a tanečnice, kteří tíhnou k divadelnímu prostoru a chtějí se rozvíjet nejen jako tanečníci a tanečnice, ale i jako performeři a performerky.",
   "hero_cta_label": "O nás",
