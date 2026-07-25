@@ -94,8 +94,19 @@ function initHeroFallback(site) {
   }
 }
 
+function initHeaderScroll() {
+  const header = qs(".site-header.on-hero");
+  if (!header) return;
+  const update = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 40);
+  };
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   initNavToggle();
+  initHeaderScroll();
   try {
     const [site, workshops, gallery] = await Promise.all([
       loadJSON("/content/site.json"),
